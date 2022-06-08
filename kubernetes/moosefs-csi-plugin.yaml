@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: csi-moosefs-controller
-  namespace: kube-system
 spec:
   serviceName: "csi-moosefs"
   replicas: 1
@@ -28,7 +27,7 @@ spec:
             capabilities:
               add: ["SYS_ADMIN"]
             allowPrivilegeEscalation: true
-          image: kunde21/moosefs-csi:v3.0.116-v0.1.1
+          image: blampe/moosefs-csi:v3.0.116-v0.1.1
           args:
             - "controller"
             - "--node=$(NODE_ID)"
@@ -130,7 +129,6 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: csi-moosefs-node
-  namespace: kube-system
 spec:
   selector:
     matchLabels:
@@ -152,7 +150,7 @@ spec:
             capabilities:
               add: ["SYS_ADMIN"]
             allowPrivilegeEscalation: true
-          image: kunde21/moosefs-csi:v3.0.116-v0.1.1
+          image: blampe/moosefs-csi:v3.0.116-v0.1.1
           args:
             - "node"
             - "--node=$(NODE_ID)"
