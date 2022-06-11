@@ -246,7 +246,7 @@ func (cs *ControllerServer) mkDir(path string) error {
 	} else if ok {
 		return nil
 	}
-	if err := os.MkdirAll(path, 0755); err != nil {
+	if err := os.MkdirAll(path, 0777); err != nil {
 		return status.Errorf(codes.Internal, "create directory failed: %v", err)
 	}
 	return nil
