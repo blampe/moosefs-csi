@@ -11,8 +11,8 @@ require (
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/cobra v1.4.0
 	github.com/spf13/viper v1.12.0
-	golang.org/x/sync v0.0.0-20220513210516-0976fa681c29
-	google.golang.org/grpc v1.46.2
+	golang.org/x/sync v0.1.0
+	google.golang.org/grpc v1.56.3
 	k8s.io/api v0.22.10
 	k8s.io/apimachinery v0.22.10
 	k8s.io/client-go v0.22.10
